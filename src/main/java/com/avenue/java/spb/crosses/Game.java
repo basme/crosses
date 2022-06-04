@@ -34,13 +34,14 @@ public class Game {
         var cursor = random.nextInt(2);
 
         while (true) {
+            // Players act consequently. Using remainder of to for their ordering
             Player currentPlayer = cursor % 2 == 0 ? playerOne : playerTwo;
             canvas.draw();
             log.info("Player {}, enter coordinates for {}", currentPlayer.getName(), currentPlayer.getFigure().getView());
             String coordinates = scanner.nextLine();
-            String[] splitted = coordinates.split(",");
-            int x = Integer.parseInt(splitted[0]);
-            int y = Integer.parseInt(splitted[1]);
+            String[] parts = coordinates.split(",");
+            int x = Integer.parseInt(parts[0]);
+            int y = Integer.parseInt(parts[1]);
             var wasLegalMove = canvas.setFigure(x, y, currentPlayer.getFigure());
             if (!wasLegalMove) {
                 log.info("This move is illegal, try again");
