@@ -23,7 +23,7 @@ public class Game {
         log.info("Enter field size (max 9): ");
         var rawSize = scanner.nextLine();
         int size = Integer.parseInt(rawSize);
-        if (size > 9) {
+        if (size > 8) {
             log.error("Max size is 9, {} is too much", size);
             return;
         }
