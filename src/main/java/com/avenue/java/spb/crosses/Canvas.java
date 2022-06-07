@@ -25,12 +25,14 @@ public class Canvas {
 
     public void draw() {
         StringBuilder line = new StringBuilder();
+        // Header
         line.append("C | ");
         for (int i = 1; i <= size; i++) {
             line.append(i);
         }
         log.info(line.toString());
         log.info("-".repeat(size + 4));
+        // Content
         for (int i = 0; i < size; i++) {
             line = new StringBuilder();
             line.append(i + 1).append(" | ");
