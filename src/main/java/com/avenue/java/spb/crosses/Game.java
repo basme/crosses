@@ -8,6 +8,8 @@ import java.util.Scanner;
 @Slf4j
 public class Game {
 
+    private static final int MAX_FIELD_SIZE = 8;
+
     public static void main(String[] args) {
         log.info("Game is started");
         Scanner scanner = new Scanner(System.in);
@@ -23,8 +25,8 @@ public class Game {
         log.info("Enter field size (max 9): ");
         var rawSize = scanner.nextLine();
         int size = Integer.parseInt(rawSize);
-        if (size > 8) {
-            log.error("Max size is 9, {} is too much", size);
+        if (size > MAX_FIELD_SIZE) {
+            log.error("Max size is {}, {} is too much", MAX_FIELD_SIZE, size);
             return;
         }
 
